@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+{% endblock %}
+
+{% block js %}
+
+<script>	
+$(function() {
+    $.rebootOps({
+        name: 'raidtype',
+        title: 'Raid厂商',
+        // addurl:'addmanu',
+        data: [{
+            name: 'name',
+            title: 'Raid厂商'
+        }]
+    })
+})
+</script>
+{% endblock %}

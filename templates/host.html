@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+{% endblock %}
+
+{% block js %}
+
+<script>	
+$(function() {
+    $.rebootOps({
+        name: 'host',
+        title: '服务器',
+        modal_detail:true,
+        // addurl:'addmanu',
+        data: [{
+            name: 'st',
+            title: 'SN号',
+            hide:true
+        },{
+            name: 'assets_no',
+            title: '资产号',
+            hide:true
+        },{
+            name: 'manufacturers',
+            title: '制造商',
+            hide:true
+        },{
+            name: 'server_type',
+            title: '服务器类型',
+            hide:true
+        },{
+            name: 'service_id',
+            title: '业务线',
+        	type:'select',
+        	select_type:'product',
+        	option_name:'service_name',
+        	// option_val:'pid',
+        	// toname:true,
+        	hide:true
+        },{
+            name: 'server_purpose',
+        	hide:true,
+
+            title: '产品线'
+        },{
+            name: 'status',
+            title: '服务器状态',
+        	type:'select',
+        	select_type:'status',
+        	hide:true,
+        	// toname:true
+        },{
+            name:'idc_id',
+            title:'IDC',
+        	type:'select',
+        	select_type:'idc'
+        },{
+            name:'cabinet_id',
+            title:'机柜号',
+        	type:'select',
+        	select_type:'cabinet'
+        },{
+            name: 'cabinet_pos',
+            title: '托盘位置',
+        	hide:true,
+        },{
+            name: 'hostname',
+            title: '主机名'
+        },{
+            name:'ipinfo',
+            title:'IP信息'
+        },{
+            name:'inner_ip',
+            title:'内网IP',
+        	hide:true,
+        },{
+            name:'dev_interface',
+            title:'网卡接口',
+
+            // type:'select',
+            value:'0'
+        },{
+            name:'mac_address',
+        	hide:true,
+            title:'mac地址'
+        },{
+            name:'raid',
+            title:'RAID',
+        	hide:true,
+        },{
+            name:'raid_card_type',
+            title:'RAID型号',
+        	hide:true,
+        },{
+            name:'ups',
+            title:'UPS电源有无',
+            type:'select',
+            value:{0:'无',1:'有'},
+        	hide:true,
+            // toname:true
+        },{
+            name:'remote_card',
+            title:'远程管理卡',
+        	hide:true,
+        },{
+            name:'remote_cardip',
+            title:'管理卡IP',
+        	hide:true,
+        },{
+            name:'power',
+            title:'电源功率',
+        	hide:true,
+        },{
+            name:'supplier',
+            title:'供应商',
+        	hide:true,
+        },{
+            name:'expire',
+            title:'过期日期',
+            type:'date'
+        },{
+            name:'remark',
+            title:'备忘'
+        }]
+    })
+})
+</script>
+{% endblock %}

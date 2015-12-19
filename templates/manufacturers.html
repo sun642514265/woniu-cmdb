@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+{% endblock %}
+
+{% block js %}
+
+<script>	
+$(function() {
+
+    $.rebootOps({
+        name: 'manufacturer',
+        title: '制造商',
+        // addurl:'addmanu',
+        data: [{
+            name: 'name',
+            title: '制造商名字',
+            msg: '请输入制造商名字'
+        }]
+    })
+})
+</script>
+{% endblock %}
