@@ -4,6 +4,7 @@ import json
 import time,random
 import datetime
 import MySQLdb
+import MySQLdb.cursors
 
 class DB: 
     conn = None
@@ -16,7 +17,7 @@ class DB:
         self.mysql_pass = mysql_pass
         self.mysql_db = mysql_db
     def connect(self):
-        self.conn = MySQLdb.connect(host=self.host, user=self.mysql_user, passwd=self.mysql_pass, db=self.mysql_db, charset="utf8", connect_timeout=600, compress=True)
+        self.conn = MySQLdb.connect(host=self.host, user=self.mysql_user, passwd=self.mysql_pass, db=self.mysql_db, charset="utf8", connect_timeout=600, compress=True,cursorclass = MySQLdb.cursors.DictCursor)
         self.conn.autocommit(True)
     def execute(self, sql):
         try:

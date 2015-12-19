@@ -62,6 +62,25 @@ $.jajax = function(url, fn) {
     })
 }
 
+$.pajax = function(url, data,fn) {
+    $.ajax({
+        url: url,
+        data:data,
+        type: 'post',
+        dataType: 'json',
+        error: function(res) {
+            swal("出错了!", '', 'error');
+        },
+        success: function(data) {
+            if (data.result) {
+                fn(data)
+            } else {
+                swal("出错了!", data.error, 'error');
+            }
+        }
+    })
+}
+
 
 
 // 使用规范
@@ -384,6 +403,31 @@ $.extend(RebootPage.prototype, {
             })
             that.updateModal.modal('show')
         })
+        $(document).off('click.delete').on('click.delete', '.delete', function() {
+            var id = $(this).data('id')
+            var type=that.name
+
+            swal({
+                title: "确认删除吗？",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false
+            }, function() {
+
+            $.pajax('/delapi',{id:id,action_type:type},function(res){
+                swal("删除!", '', 'success');
+                that.getlist()
+
+            })
+            });
+
+
+
+
+
+        })
         $(document).off('click.detail').on('click.detail', '.detail', function() {
             var obj = $(this).data()
             var tableArr = ['<table class="table table-bordered table-condensed">']
@@ -429,7 +473,7 @@ $.extend(RebootPage.prototype, {
             var arr = []
             // 循环result，每个数据是一行
             $.each(data.result, function(i, v) {
-                var btn = ['<button class="btn btn-xs btn-primary" ']
+                var btn = ['<button style="margin-left:10px" class="btn btn-xs btn-primary" ']
                 arr.push('<tr>')
                 //将数据放在data里,编辑的时候从这里取数据渲染表单
                 $.each(v, function(key, val) {
@@ -460,6 +504,8 @@ $.extend(RebootPage.prototype, {
                 if (that.modal_detail) {
                     operateBtn += $(btn.join('')).addClass('detail').html('详细').prop('outerHTML')
                 };
+                operateBtn += $(btn.join('')).removeClass('btn-primary').addClass('delete').addClass('btn-danger').html('删除').prop('outerHTML')
+
                 arr.push('<td>' + operateBtn+ '</td>')
                 arr.push('</td>')
 

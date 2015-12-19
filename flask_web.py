@@ -3,6 +3,11 @@ import requests
 app = Flask(__name__)
 import json
 
+from dbutil.dbutil import DB
+# import dbutil.
+db = DB(host="localhost", mysql_user="root", mysql_pass="", \
+                mysql_db="cmdb")
+
 data = {
         "jsonrpc": "2.0",
         "id":1,
@@ -17,41 +22,65 @@ def render(template):
     return render_template(template+'.html')
 @app.route('/addapi', methods=['POST'])
 def addapi():
-    print request.form
-    data['params'] = request.form
-    action_type = request.form.get('action_type')
-    data['method'] = action_type+".create"
-    
-    print data
-    url = 'http://127.0.0.1:5000/api'
-    r = requests.post(url, headers=headers, json=json.dumps(data))
-    return r.content
+
+    obj = request.form.to_dict()
+    table = obj.pop('action_type')
+    keys = obj.keys()
+    values = obj.values()
+
+    sql = 'insert into %s (%s) values ("%s")' % (table,','.join(keys),'","'.join(values))
+    print sql
+    db.execute(sql)
+    res = {'result':'ok'}
+    return json.dumps(res)
+@app.route('/delapi', methods=['POST'])
+def delapi():
+
+    obj = request.form.to_dict()
+    table = obj.pop('action_type')
+    table_id = obj.pop('id')
+    sql = 'delete from %s where id=%s' %(table,table_id)
+    # sql = 'insert into %s (%s) values ("%s")' % (table,','.join(keys),'","'.join(values))
+    print sql
+    db.execute(sql)
+    res = {'result':'ok'}
+    return json.dumps(res)
+
 @app.route('/listapi')
 def listapi():
     action_type = request.args.get('action_type')
-    data['method'] = action_type+".get"
-    data['params'] = {}
-    print data
-    url = 'http://127.0.0.1:5000/api'
-    r = requests.post(url, headers=headers, json=json.dumps(data))
-    return r.content
+    sql = 'select * from '+action_type
+    cur = db.execute(sql)
+    res = {"result":cur.fetchall()}
+    return json.dumps(res)
+
+
+
+
+
 @app.route('/updateapi',methods=['POST'])
 def updateapi():
-    formdata = request.form.to_dict()
-    # print formdata
-    action_type = formdata.pop('action_type')
-    # del request.form['action_type']
-    data['method'] = action_type+".update"
-    data['params'] = {
-        "data":formdata,
-        "where":{
-            "id":request.form.get('id')
-        }
-    }
-    print data
-    url = 'http://127.0.0.1:5000/api'
-    r = requests.post(url, headers=headers, json=json.dumps(data))
-    return r.content
+    obj = request.form.to_dict()
+    table = obj.pop('action_type')
+    table_id = obj.pop('id')
+    arr = []
+    for key,val in obj.items():
+        arr.append('%s="%s"'%(key,val))
+    print arr
+    keys = obj.keys()
+    values = obj.values()
+    sql = 'update %s set '%(table)
+
+    sql += ','.join(arr)
+    sql += ' where id='+table_id
+    print sql
+    db.execute(sql)
+    res = {'result':'ok'}
+    return json.dumps(res)
+
+
+
+
 
 
 
