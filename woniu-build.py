@@ -43,17 +43,18 @@ def gen_config(config):
 
 def del_table(name):
     sql = 'drop table if exists '+name
+    print sql
     db.execute(sql)
 def create_table(name,data):
-    
     tmp = []
     for v in data:
-        tmp.append('%s varchar(200)')
+        tmp.append('%s varchar(200)'%v['name'])
     sql = 'create table %s (%s)' % (name,','.join(tmp))
+    print sql
     db.execute(sql)
     print 'table %s is created' % (name)
 def init_database():
-    for c in config['page_config']:
+    for c in config.page_config:
         name = c['name']
         del_table(name)
         create_table(name,c['data'])
@@ -61,5 +62,5 @@ def init_database():
 
 
 if __name__ == '__main__':
-
-    gen_config(config['page_config'])
+    init_database()
+    gen_config(config.page_config)

@@ -5,8 +5,8 @@ import json
 from config import db_config,page_config
 from dbutil.dbutil import DB
 # import dbutil.
-db = DB(host=config['host'], mysql_user=config['user'], mysql_pass=config['passwd'], \
-                mysql_db=config['db'])
+db = DB(host=db_config['host'], mysql_user=db_config['user'], mysql_pass=db_config['passwd'], \
+                mysql_db=db_config['db'])
 
 data = {
         "jsonrpc": "2.0",
