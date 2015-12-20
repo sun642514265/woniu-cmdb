@@ -41,8 +41,8 @@ def gen_config(config):
     for c in config:
         gen_file(c)
 def init_database():
-    
+
 
 if __name__ == '__main__':
 
-    gen_config(config.config)
+    gen_config(config['page_config'])
