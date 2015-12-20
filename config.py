@@ -1,6 +1,17 @@
 # coding=utf-8
 
-config = [{
+
+# 数据库配置
+db_config = {
+	host:'localhost'
+	user:'root',
+	passwd:""
+	db:'cmdb'
+}
+
+
+# 页面配置
+page_config = [{
     "name": 'test',
     "title": '用户',
     "data": [{

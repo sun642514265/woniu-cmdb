@@ -6,6 +6,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 import json
 import config
+import sys
+from flask_web import db
 
 head = '''
 {% extends "layout.html" %}
@@ -35,8 +37,12 @@ def gen_file(config):
     	# f.write(unicode(str(config),'utf-8').decode('gbk'))
     	f.write(foot)
 
-def gen(config):
+def gen_config(config):
     for c in config:
         gen_file(c)
+def init_database():
+    
+
 if __name__ == '__main__':
-    gen(config.config)
+
+    gen_config(config.config)

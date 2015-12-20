@@ -2,11 +2,11 @@ from flask import Flask,request,render_template,redirect,url_for
 import requests
 app = Flask(__name__)
 import json
-
+from config import db_config,page_config
 from dbutil.dbutil import DB
 # import dbutil.
-db = DB(host="localhost", mysql_user="root", mysql_pass="", \
-                mysql_db="cmdb")
+db = DB(host=config['host'], mysql_user=config['user'], mysql_pass=config['passwd'], \
+                mysql_db=config['db'])
 
 data = {
         "jsonrpc": "2.0",
