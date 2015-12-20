@@ -5,6 +5,7 @@ import os,sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 import json
+import config
 
 head = '''
 {% extends "layout.html" %}
@@ -37,3 +38,5 @@ def gen_file(config):
 def gen(config):
     for c in config:
         gen_file(c)
+if __name__ == '__main__':
+    gen(config.config)
