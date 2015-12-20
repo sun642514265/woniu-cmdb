@@ -51,6 +51,7 @@ def create_table(name,data):
         tmp.append('%s varchar(200)')
     sql = 'create table %s (%s)' % (name,','.join(tmp))
     db.execute(sql)
+    print 'table %s is created' % (name)
 def init_database():
     for c in config['page_config']:
         name = c['name']
