@@ -40,9 +40,24 @@ def gen_file(config):
 def gen_config(config):
     for c in config:
         gen_file(c)
+
+def del_table(name):
+    sql = 'drop table if exists '+name
+    db.execute(sql)
+def create_table(name,data):
+    
+    tmp = []
+    for v in data:
+        tmp.append('%s varchar(200)')
+    sql = 'create table %s (%s)' % (name,','.join(tmp))
+    db.execute(sql)
 def init_database():
     for c in config['page_config']:
-        pass
+        name = c['name']
+        del_table(name)
+        create_table(name,c['data'])
+
+
 
 if __name__ == '__main__':
 
