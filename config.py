@@ -13,10 +13,10 @@ db_config = {
 # 页面配置
 page_config = [
     {
-        "name": 'test',
+        "name": 'user',
         "title": '用户',
         "data": [{
-            "name": 'name',
+            "name": 'username',
             "title": '用户名'
         },{
             "name":'password',
@@ -31,7 +31,7 @@ page_config = [
             "title": '权限名'
         },{
             "name":'password',
-            "title":'密码'
+            "title":'999'
         }]
     },
     # {

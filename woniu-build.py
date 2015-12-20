@@ -9,6 +9,8 @@ import config
 import sys
 from flask_web import db
 
+
+
 head = '''
 {% extends "layout.html" %}
 {% block body %}
@@ -30,12 +32,11 @@ foot = '''
 
 
 def gen_file(config):
-    with open('templates/'+config['name']+'.html','w') as f:
+    with open('templates/page/'+config['name']+'.html','w') as f:
     	f.write(head)
     	f.write('              '+json.dumps(config))
-    	# f.write(str({'name':'你好'}))
-    	# f.write(unicode(str(config),'utf-8').decode('gbk'))
     	f.write(foot)
+        print config['name']+' build success'
 
 def gen_config(config):
     for c in config:
@@ -49,7 +50,7 @@ def create_table(name,data):
     tmp = []
     for v in data:
         tmp.append('%s varchar(200)'%v['name'])
-    sql = 'create table %s (%s)' % (name,','.join(tmp))
+    sql = 'create table %s (id int not null auto_increment primary key,%s)' % (name,','.join(tmp))
     print sql
     db.execute(sql)
     print 'table %s is created' % (name)
@@ -59,8 +60,8 @@ def init_database():
         del_table(name)
         create_table(name,c['data'])
 
-
-
 if __name__ == '__main__':
-    init_database()
+    if len(sys.argv)>1 and sys.argv[1]=='init':
+        init_database()
+        db.execute('insert into user (username,password) values ("51reboot","51reboot")')
     gen_config(config.page_config)

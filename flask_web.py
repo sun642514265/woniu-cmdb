@@ -1,6 +1,9 @@
-from flask import Flask,request,render_template,redirect,url_for
+from flask import Flask,request,render_template,redirect,url_for,session
 import requests
+
 app = Flask(__name__)
+app.secret_key = '\xca\x0c\x86\x04\x98@\x02b\x1b7\x8c\x88]\x1b\xd7"+\xe6px@\xc3#\\'
+
 import json
 from config import db_config,page_config
 from dbutil.dbutil import DB
@@ -17,9 +20,36 @@ data = {
 
 headers = {"Content-Type": "application/json"}
 
+@app.route('/login',methods=['GET','POST'])
+def login():
+    if request.method == "POST":
+        name = request.form.get('username')
+        passwd = request.form.get('password')
+        print name
+        print passwd
+        obj = {"result":1}
+        if name and passwd:
+            sql = 'select * from user where username="%s" and password="%s"'%(name,passwd)
+            print sql
+            cur = db.execute(sql)
+            # print cur.fetchone()
+            if cur.fetchone():
+                obj["result"] = 0
+                session['username'] = name
+        return json.dumps(obj)                
+    else:
+        return render_template('login.html')
+@app.route('/logout')
+def logout():
+    session.pop('username')
+    return redirect('/login')
+
 @app.route('/page/<template>')
 def render(template):
-    return render_template(template+'.html')
+    if 'username' in session:
+        return render_template('page/'+template+'.html')
+    else:
+        return redirect('/login')
 @app.route('/addapi', methods=['POST'])
 def addapi():
 
@@ -78,20 +108,9 @@ def updateapi():
     res = {'result':'ok'}
     return json.dumps(res)
 
-
-
-
-
-
-
-
-
-@app.route('/aaa')
-def aaa():
-    return render_template('layout1.html')
 @app.route('/')
 def index():
-    return redirect('/page/host')
+    return redirect('/page/user')
     # return render_template('index.html')
 
 
