@@ -13,6 +13,7 @@ db_config = {
 
 page_config = {
     "menu":[{
+        # user配置最好不要修改，是和登陆认证相关的，直接在下面加配置即可
         "name": 'user',
         "title": '用户管理',
         "data": [{
