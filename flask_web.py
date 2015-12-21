@@ -11,7 +11,7 @@ app.secret_key = '\xca\x0c\x86\x04\x98@\x02b\x1b7\x8c\x88]\x1b\xd7"+\xe6px@\xc3#
 db = DB(host=db_config['host'], mysql_user=db_config['user'], mysql_pass=db_config['passwd'], \
                 mysql_db=db_config['db'])
 page_config.setdefault('favicon','/static/img/favicon.ico')
-page_config.setdefault('page_title','Woniu-cmdb')
+page_config.setdefault('title','Woniu-cmdb')
 page_config.setdefault('brand_name','Woniu-cmdb')
 
 @app.route('/login',methods=['GET','POST'])
