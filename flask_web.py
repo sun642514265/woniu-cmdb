@@ -1,24 +1,13 @@
 from flask import Flask,request,render_template,redirect,url_for,session
+from config import db_config,page_config
+from dbutil.dbutil import DB
 import requests
+import json
 
 app = Flask(__name__)
 app.secret_key = '\xca\x0c\x86\x04\x98@\x02b\x1b7\x8c\x88]\x1b\xd7"+\xe6px@\xc3#\\'
-
-import json
-from config import db_config,page_config
-from dbutil.dbutil import DB
-# import dbutil.
 db = DB(host=db_config['host'], mysql_user=db_config['user'], mysql_pass=db_config['passwd'], \
                 mysql_db=db_config['db'])
-
-data = {
-        "jsonrpc": "2.0",
-        "id":1,
-        "auth":None,
-}
-
-
-headers = {"Content-Type": "application/json"}
 
 @app.route('/login',methods=['GET','POST'])
 def login():
@@ -47,7 +36,7 @@ def logout():
 @app.route('/page/<template>')
 def render(template):
     if 'username' in session:
-        return render_template('page/'+template+'.html')
+        return render_template('page/'+template+'.html',data=page_config)
     else:
         return redirect('/login')
 @app.route('/addapi', methods=['POST'])
