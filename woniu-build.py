@@ -1,6 +1,5 @@
 
 # coding=utf-8
-
 import os,sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
@@ -8,9 +7,6 @@ import json
 from config import db_config,page_config
 import sys
 from flask_web import db
-
-
-
 
 head = '''
 {% extends "layout.html" %}
@@ -30,8 +26,6 @@ foot = '''
 {% endblock %}
 
 '''
-
-
 
 def gen_file(config):
     with open('templates/page/'+config['name']+'.html','w') as f:
