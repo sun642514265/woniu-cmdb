@@ -39,7 +39,7 @@ def logout():
 @app.route('/page/<template>')
 def render(template):
     if 'username' in session:
-        return render_template('page/'+template+'.html',data=page_config)
+        return render_template('page/'+template+'.html',data=page_config,username=session['username'])
     else:
         return redirect('/login')
 @app.route('/addapi', methods=['POST'])
