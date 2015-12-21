@@ -136,13 +136,31 @@ button.detail{
                     <ul class="nav" id="side-menu">
 
                         {% for menu in data.menu %}
-                            <li>
-                            <a href="/page/{{menu.name}}">{{menu.title}}</a>
-                            </li>
+                            {% if menu.sub %}
+                                <li>
+                                    
+                                    <a href="#">{{menu.title}}<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-second-level">
+                                    {% for s in menu.sub%}
+                                        <li>
+                                            <a href="/page/{{s.name}}">{{s.title}}</a>
+                                        </li>
+
+                                    {% endfor %}
+                                    </ul>
+                                </li>
+
+                            {% else %}
+                                <li>
+                                    <a href="/page/{{menu.name}}">{{menu.title}}</a>
+                                </li>
+
+                            {% endif %}
                             
                         {% endfor %}
 
 <!--                         <li>
+
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> IT资产<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

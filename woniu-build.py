@@ -56,16 +56,23 @@ def create_table(name,data):
     print sql
     db.execute(sql)
     print 'table %s is created' % (name)
-def init_database():
+def init_database(config):
 
-    for c in page_config['menu']:
+    for c in config:
         name = c['name']
         del_table(name)
         create_table(name,c['data'])
 
 if __name__ == '__main__':
-
+    config = []
+    for page in page_config['menu']:
+        if 'sub' in page:
+            for s in page['sub']:
+                config.append(s)
+        else:
+            config.append(page)
+    print config
     if len(sys.argv)>1 and sys.argv[1]=='init':
-        init_database()
+        init_database(config)
         db.execute('insert into user (username,password) values ("51reboot","51reboot")')
-    gen_config(page_config['menu'])
+    gen_config(config)
