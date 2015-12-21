@@ -3,7 +3,9 @@ from config import db_config,page_config
 from dbutil.dbutil import DB
 import requests
 import json
-
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 app = Flask(__name__)
 app.secret_key = '\xca\x0c\x86\x04\x98@\x02b\x1b7\x8c\x88]\x1b\xd7"+\xe6px@\xc3#\\'
 db = DB(host=db_config['host'], mysql_user=db_config['user'], mysql_pass=db_config['passwd'], \
@@ -14,6 +16,8 @@ page_config.setdefault('brand_name','Woniu-cmdb')
 
 @app.route('/login',methods=['GET','POST'])
 def login():
+    if 'username' in session:
+        return redirect('/')
     if request.method == "POST":
         name = request.form.get('username')
         passwd = request.form.get('password')

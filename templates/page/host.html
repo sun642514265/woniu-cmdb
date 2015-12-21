@@ -1,0 +1,15 @@
+
+{% extends "layout.html" %}
+{% block body %}
+{% endblock %}
+    
+{% block js %}
+    <script>	
+        $(function() {
+            $.rebootOps(
+              {"data": [{"name": "cabinet", "title": "\u673a\u67dc"}, {"name": "hostname", "title": "\u4e3b\u673a\u540d"}], "name": "host", "title": "\u670d\u52a1\u5668"}
+            )
+        })
+    </script>
+{% endblock %}
+

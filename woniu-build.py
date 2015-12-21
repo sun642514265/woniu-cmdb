@@ -11,6 +11,7 @@ from flask_web import db
 
 
 
+
 head = '''
 {% extends "layout.html" %}
 {% block body %}
@@ -29,6 +30,7 @@ foot = '''
 {% endblock %}
 
 '''
+
 
 
 def gen_file(config):
@@ -55,24 +57,15 @@ def create_table(name,data):
     db.execute(sql)
     print 'table %s is created' % (name)
 def init_database():
-    page_config['menu'].append({
-        "name": 'user',
-        "title": '用户管理',
-        "data": [{
-            "name": 'username',
-            "title": '用户名'
-        },{
-            "name":'password',
-            "title":'密码'
-        }]
-    })
+
     for c in page_config['menu']:
         name = c['name']
         del_table(name)
         create_table(name,c['data'])
 
 if __name__ == '__main__':
+
     if len(sys.argv)>1 and sys.argv[1]=='init':
         init_database()
         db.execute('insert into user (username,password) values ("51reboot","51reboot")')
-    gen_config(page_config)
+    gen_config(page_config['menu'])

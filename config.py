@@ -12,7 +12,17 @@ db_config = {
 
 
 page_config = {
-    menu:[{
+    "menu":[{
+        "name": 'user',
+        "title": '用户管理',
+        "data": [{
+            "name": 'username',
+            "title": '用户名'
+        },{
+            "name":'password',
+            "title":'密码'
+        }]
+    },{
         "name": 'host',
         "title": '服务器',
         "data": [{
