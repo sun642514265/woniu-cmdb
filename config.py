@@ -13,17 +13,6 @@ db_config = {
 page_config = {
     brand_name:'Woniu Admin'
     menu:[{
-        "name": 'user',
-        "title": '用户',
-        "desc":'这个是用户的配置，尽量不要改',
-        "data": [{
-            "name": 'username',
-            "title": '用户名'
-        },{
-            "name":'password',
-            "title":'密码'
-        }]
-    },{
         "name": 'host',
         "title": '服务器',
         "data": [{
