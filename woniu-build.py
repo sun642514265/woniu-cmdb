@@ -5,7 +5,7 @@ import os,sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 import json
-import config
+from config import db_config,page_config
 import sys
 from flask_web import db
 
@@ -55,7 +55,7 @@ def create_table(name,data):
     db.execute(sql)
     print 'table %s is created' % (name)
 def init_database():
-    config.page_config['menu'].append({
+    page_config['menu'].append({
         "name": 'user',
         "title": '用户管理',
         "data": [{
@@ -66,7 +66,10 @@ def init_database():
             "title":'密码'
         }]
     })
-    for c in config.page_config['menu']:
+    page_config.setdefault('favicon','/static/img/favicon.ico')
+    page_config.setdefault('page_title','Woniu-cmdb')
+    page_config.setdefault('brand_name','Woniu-cmdb')
+    for c in page_config['menu']:
         name = c['name']
         del_table(name)
         create_table(name,c['data'])
@@ -75,4 +78,4 @@ if __name__ == '__main__':
     if len(sys.argv)>1 and sys.argv[1]=='init':
         init_database()
         db.execute('insert into user (username,password) values ("51reboot","51reboot")')
-    gen_config(config.page_config)
+    gen_config(page_config)

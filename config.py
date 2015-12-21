@@ -11,7 +11,6 @@ db_config = {
 
 
 page_config = {
-    brand_name:'Woniu Admin'
     menu:[{
         "name": 'host',
         "title": '服务器',
