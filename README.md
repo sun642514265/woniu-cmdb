@@ -67,10 +67,21 @@ page_config = {
 
 ### 字段详解
 
+1. page_config配置
+
+```
+    menu:下面具体介绍，页面具体的字段
+    favicon:页面标签的小logo 默认用reboot的
+    title：页面标签的标题，默认是woniu-cmdb
+    brand_name：项目左上角显示文字，默认是woniu-cmdb
+
+```
+
+2. menu配置详解
 ```
 
 {
-    name:名字
+    name:名字和数据库表名一直
     titile:中文
     modal_detail:是否用模态窗展示详情（有隐藏字段没展示）
     具体字段数据
@@ -79,13 +90,14 @@ page_config = {
             name:
             title:
             type:类型，默认input text
-            select_type：获取数据的action_type的值
+            value：select直接从value里渲染，不发ajax和preload，如果没有type，就是input里的value属性
+
+            select_type：获取数据的action_type的值,和对应的name字段一致
+            toname:preload数据里，完成id到name得转换显示，select默认true
+             hide:默认false，true的话隐藏此字段
+             
             option_val list的显示字段 默认id
             option_name list的显示字段 默认name
-            toname:preload数据里，完成id到name得转换显示，select默认true
-            value：select直接从value里渲染，不发ajax和preload，如果没有type，就是input里的value属性
-             hide:默认false，true的话隐藏此字段
-
 
         }
     ]
