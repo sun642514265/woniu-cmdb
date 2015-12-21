@@ -55,6 +55,17 @@ def create_table(name,data):
     db.execute(sql)
     print 'table %s is created' % (name)
 def init_database():
+    config.page_config.append({
+        "name": 'user',
+        "title": '用户',
+        "data": [{
+            "name": 'username',
+            "title": '用户名'
+        },{
+            "name":'password',
+            "title":'密码'
+        }]
+    })
     for c in config.page_config:
         name = c['name']
         del_table(name)
