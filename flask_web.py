@@ -73,10 +73,6 @@ def listapi():
     res = {"result":cur.fetchall()}
     return json.dumps(res)
 
-
-
-
-
 @app.route('/updateapi',methods=['POST'])
 def updateapi():
     obj = request.form.to_dict()
