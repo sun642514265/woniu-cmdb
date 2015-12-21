@@ -1,21 +1,24 @@
 # woniu-cmdb
 ### :snail: 奇技淫巧--写配置文件生成增删改查系统:mushroom: 
 
+[线上demo](http://admin.51reboot.com/)
 
 > 运维人员都不喜欢搞CMDB，因为有很多前端的内容，但CMDB却在运维圈占有重要的地位，开发CMDB就是各种增删改查，之后我有个想法，做一个写配置文件就自动生成页面的CMDB, 请支持我的woniu-cmdb,喜欢请star
 
+### 写好配置文件，自从生成页增删改查面不是梦
 
-此项目其实就是生成增删改查系统，不仅限于cmdb，各种管理系统，都可以用此项目配置，我会一直维护这个项目，大家有新需求请提issue
+此项目不仅限于cmdb，各种管理系统，都可以用此项目配置，我会一直维护这个项目，大家有新需求请提issue
 
 
 ### 依赖
 
-依赖flask和mysqldb模块，直接pip安装一下即可
+本项目python依赖flask和mysqldb模块，直接pip安装一下即可
 
-### 功能
-* 配置生成页面
-* 自带一个user表，负责登录功能
-* 页面自带增删改查和查看详情
+### 简单配置，生成页面
+命令只有两个
+
+> python woniu-build.py init # 初始化数据库+根据配置生成文件
+> python woniu-build.py 仅根绝配置生成文件 
 
 ### 使用指南
 
@@ -33,19 +36,37 @@ db_config = {
 
 ```
 
+
 3. 修改config.py的page_config变量，此变量是设置具体的页面变量，先做一个简单的配置
 
+```
+
+page_config = {
+    # menu是一个list，包含所有的页面信息
+    "menu":[{
+        //页面的名字，和数据库表一致
+        "name": 'user',
+        // 显示的页面标题
+        "title": '用户管理',
+
+        # 页面里具体的字段，如果有两个字段，配置两个即可，包含name和title
+        "data": [{
+            "name": 'username',
+            "title": '用户名'
+        },{
+            "name":'password',
+            "title":'密码'
+        }]
+    }}]
+}
+
+```
+
+4. 执行 python woniu-build.py 处理文件，启动flask_web.py，浏览器访问http://localhost:9092/
+5. 默认有一个用户，账号和密码都是51reboot
 
 
-
-
-
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+### 字段详解
 
 ```
 
