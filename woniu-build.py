@@ -66,9 +66,6 @@ def init_database():
             "title":'密码'
         }]
     })
-    page_config.setdefault('favicon','/static/img/favicon.ico')
-    page_config.setdefault('page_title','Woniu-cmdb')
-    page_config.setdefault('brand_name','Woniu-cmdb')
     for c in page_config['menu']:
         name = c['name']
         del_table(name)
