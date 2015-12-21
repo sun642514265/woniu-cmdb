@@ -2,7 +2,7 @@
 ### 奇技淫巧--写配置文件生成增删改查系统
 
 
-> 运维人员都不喜欢搞CMDB，因为有很多前端的内容，但CMDB却在运维圈占有重要的地位，开发CMDB就是各种增删改查，之后我有个想法，不如重新开发一个属于自己的CMDB。写配置文件就自动生成页面的CMDB, 请支持我的woniu-cmdb,喜欢请star
+> 运维人员都不喜欢搞CMDB，因为有很多前端的内容，但CMDB却在运维圈占有重要的地位，开发CMDB就是各种增删改查，之后我有个想法，不如写配置文件就自动生成页面的CMDB, 请支持我的woniu-cmdb,喜欢请star
 
 
 ### 功能
@@ -12,15 +12,22 @@
 ### 使用规范
 
 
+你要修改的文件，就是config.py里的两个变量
+
+> db_config数据库配置
+
+`
+db_config = {
+    'host':'localhost',
+    'user':'root',
+    'passwd':"",
+    'db':'cmdb'
+}
+`
 
 
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
 
 ```
 
