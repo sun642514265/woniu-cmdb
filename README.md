@@ -12,6 +12,7 @@
 ### 使用指南
 
 1. 下载该项目到本地
+2. config.py是我们唯一要修改的文件
 2. 修改config.py里的db_config变量，配置数据库的host，用户名，密码和要操作的数据库
 
 ```python
@@ -24,7 +25,9 @@ db_config = {
 
 ```
 
-3. 修改config.py的page_config变量，此变量是设置具体的页面变量
+3. 修改config.py的page_config变量，此变量是设置具体的页面变量，先做一个简单的配置
+
+
 
 
 
