@@ -2,6 +2,8 @@
 ### :snail: 奇技淫巧--写配置文件生成增删改查系统:mushroom: 
 ### [视频教程](http://v.qq.com/page/u/p/9/u01775jmmp9.html)
 
+<iframe class="video_iframe" style="z-index: 1; width: 670px !important; height: 502.5px !important; overflow: hidden;" height="502.5" width="670" frameborder="0" data-src="https://v.qq.com/iframe/preview.html?vid=o0177n0nfav&amp;width=500&amp;height=375&amp;auto=0" allowfullscreen="" src="https://v.qq.com/iframe/player.html?vid=o0177n0nfav&amp;width=670&amp;height=502.5&amp;auto=0" scrolling="no"></iframe>
+
 [线上demo](http://admin.51reboot.com/),此页面都是一个配置文件自动生成的
 
 
