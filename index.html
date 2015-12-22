@@ -26,7 +26,13 @@
 <a id="snail-奇技淫巧--写配置文件生成增删改查系统mushroom" class="anchor" href="#snail-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7--%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E7%B3%BB%E7%BB%9Fmushroom" aria-hidden="true"><span class="octicon octicon-link"></span></a><img class="emoji" title=":snail:" alt=":snail:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f40c.png" height="20" width="20" align="absmiddle"> 奇技淫巧--写配置文件生成增删改查系统<img class="emoji" title=":mushroom:" alt=":mushroom:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f344.png" height="20" width="20" align="absmiddle">
 </h3>
 
-<p><a href="http://admin.51reboot.com/">线上demo</a></p>
+<h3>
+<a id="视频教程" class="anchor" href="#%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://v.qq.com/page/u/p/9/u01775jmmp9.html">视频教程</a>
+</h3>
+
+
+
+<p><a href="http://admin.51reboot.com/">线上demo</a>,此页面都是一个配置文件自动生成的</p>
 
 <blockquote>
 <p>运维人员都不喜欢搞CMDB，因为有很多前端的内容，但CMDB却在运维圈占有重要的地位，开发CMDB就是各种增删改查，之后我有个想法，做一个写配置文件就自动生成页面的CMDB, 请支持我的woniu-cmdb,喜欢请star</p>
@@ -35,7 +41,7 @@
 <h3>
 <a id="写好配置文件自从生成页增删改查面不是梦" class="anchor" href="#%E5%86%99%E5%A5%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%87%AA%E4%BB%8E%E7%94%9F%E6%88%90%E9%A1%B5%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E9%9D%A2%E4%B8%8D%E6%98%AF%E6%A2%A6" aria-hidden="true"><span class="octicon octicon-link"></span></a>写好配置文件，自从生成页增删改查面不是梦</h3>
 
-<p>此项目不仅限于cmdb，各种管理系统，都可以用此项目配置，我会一直维护这个项目，大家有新需求请提issue</p>
+<p>此项目不仅限于cmdb，各种管理系统，都可以用此项目配置，改成学生老师啥的，就变成了学校内部的mis系统，我会一直维护这个项目，大家有新需求请提issue</p>
 
 <h3>
 <a id="效果图我们只写左边的配置右边的是自动生成的" class="anchor" href="#%E6%95%88%E6%9E%9C%E5%9B%BE%E6%88%91%E4%BB%AC%E5%8F%AA%E5%86%99%E5%B7%A6%E8%BE%B9%E7%9A%84%E9%85%8D%E7%BD%AE%E5%8F%B3%E8%BE%B9%E7%9A%84%E6%98%AF%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>效果图（我们只写左边的配置，右边的是自动生成的）</h3>
@@ -47,10 +53,10 @@
 
 <p>命令只有两个</p>
 
-<blockquote>
-<p>python woniu-build.py init # 初始化数据库+根据配置生成文件
-python woniu-build.py 仅根绝配置生成文件 </p>
-</blockquote>
+<pre><code>python woniu-build.py init # 初始化数据库+根据配置生成文件
+
+python woniu-build.py 仅根绝配置生成文件 
+</code></pre>
 
 <h3>
 <a id="使用指南" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用指南</h3>
@@ -146,15 +152,25 @@ page_config = {
 <p>todolist:</p>
 
 <ul>
-<li>侧边栏生成</li>
-<li>初始化数据库</li>
-<li>登录页面</li>
+<li>登录权限+页面权限</li>
+<li>更丰富的前端组件，现在只支持输入，日期和下啦框</li>
+<li>大家有需求请提issues 我会持续维护这个项目，</li>
 </ul>
 
 <h3>
 <a id="依赖" class="anchor" href="#%E4%BE%9D%E8%B5%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>依赖</h3>
 
 <p>本项目python依赖flask和mysqldb模块，直接pip安装一下即可</p>
+
+<p>运维开发交流QQ群：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=f03fd72ed353ccfc801d393529aed84e2a663334caba7af88aa2a29620636549"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Reboot【二】" title="Reboot【二】"></a></p>
+
+<p>欢迎大家关注公共号,高品质运维开发</p>
+
+<p><img src="http://7xjoq9.com1.z0.glb.clouddn.com/erweima.jpg" alt=""></p>
+
+<p>如果您觉得有我写的东西对你帮助，可以打赏点钱给我支付宝支付宝<a href="mailto:316783812@qq.com">316783812@qq.com</a>或者扫二维码</p>
+
+<p><img src="http://7xjoq9.com1.z0.glb.clouddn.com/zhifubao.png" alt=""></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/shengxinjing/woniu-cmdb">woniu-cmdb</a> is maintained by <a href="https://github.com/shengxinjing">shengxinjing</a>.</span>
