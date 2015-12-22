@@ -1,13 +1,15 @@
 # woniu-cmdb
 ### :snail: 奇技淫巧--写配置文件生成增删改查系统:mushroom: 
 
-[线上demo](http://admin.51reboot.com/)
+[线上demo](http://admin.51reboot.com/),此页面都是一个配置文件自动生成的
+
+[使用视频](http://v.qq.com/page/u/p/9/u01775jmmp9.html)
 
 > 运维人员都不喜欢搞CMDB，因为有很多前端的内容，但CMDB却在运维圈占有重要的地位，开发CMDB就是各种增删改查，之后我有个想法，做一个写配置文件就自动生成页面的CMDB, 请支持我的woniu-cmdb,喜欢请star
 
 ### 写好配置文件，自从生成页增删改查面不是梦
 
-此项目不仅限于cmdb，各种管理系统，都可以用此项目配置，我会一直维护这个项目，大家有新需求请提issue
+此项目不仅限于cmdb，各种管理系统，都可以用此项目配置，改成学生老师啥的，就变成了学校内部的mis系统，我会一直维护这个项目，大家有新需求请提issue
 
 ### 效果图（我们只写左边的配置，右边的是自动生成的）
 ![](http://7xjoq9.com1.z0.glb.clouddn.com/cmdb01.png)
@@ -17,6 +19,7 @@
 命令只有两个
 
 > python woniu-build.py init # 初始化数据库+根据配置生成文件
+
 > python woniu-build.py 仅根绝配置生成文件 
 
 ### 使用指南
@@ -106,9 +109,7 @@ page_config = {
 
 todolist:
 
-* 侧边栏生成
-* 初始化数据库
-* 登录页面
+* 大家有需求请提issues
 
 ### 依赖
 
