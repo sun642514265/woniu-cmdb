@@ -109,9 +109,21 @@ page_config = {
 ```
 
 todolist:
-
+* 登录权限+页面权限
+* 更丰富的前端组件，现在只支持输入，日期和下啦框
 * 大家有需求请提issues 我会持续维护这个项目，
 
 ### 依赖
 
 本项目python依赖flask和mysqldb模块，直接pip安装一下即可
+
+
+<p>运维开发交流QQ群：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=f03fd72ed353ccfc801d393529aed84e2a663334caba7af88aa2a29620636549"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Reboot【二】" title="Reboot【二】"></a></p>
+欢迎大家关注公共号,高品质运维开发
+
+![](http://7xjoq9.com1.z0.glb.clouddn.com/erweima.jpg)
+
+
+如果您觉得有我写的东西对你帮助，可以打赏点钱给我支付宝支付宝316783812@qq.com或者扫二维码
+
+![](http://7xjoq9.com1.z0.glb.clouddn.com/zhifubao.png)
