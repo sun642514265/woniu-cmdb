@@ -1,4 +1,4 @@
-# woniu-cmdb
+# [woniu-cmdb](http://shengxinjing.cn/woniu-cmdb/)
 ### :snail: 奇技淫巧--写配置文件生成增删改查系统:mushroom: 
 ### [视频教程](http://v.qq.com/page/u/p/9/u01775jmmp9.html)
 
