@@ -18,10 +18,11 @@
 ### 简单配置，生成页面
 命令只有两个
 
-> python woniu-build.py init # 初始化数据库+根据配置生成文件
+```
+python woniu-build.py init # 初始化数据库+根据配置生成文件
 
-> python woniu-build.py 仅根绝配置生成文件 
-
+python woniu-build.py 仅根绝配置生成文件 
+```
 ### 使用指南
 
 1. 下载该项目到本地
@@ -109,7 +110,7 @@ page_config = {
 
 todolist:
 
-* 大家有需求请提issues
+* 大家有需求请提issues 我会持续维护这个项目，
 
 ### 依赖
 
