@@ -1,9 +1,11 @@
 # woniu-cmdb
 ### :snail: 奇技淫巧--写配置文件生成增删改查系统:mushroom: 
+### [视频教程](http://v.qq.com/page/u/p/9/u01775jmmp9.html)
+<iframe class="video_iframe" style=" z-index:1; " src="http://v.qq.com/iframe/player.html?vid=u01775jmmp9&amp;width=900&amp;height=600&amp;auto=0" allowfullscreen="" frameborder="0" height="200" width="300"></iframe>
 
 [线上demo](http://admin.51reboot.com/),此页面都是一个配置文件自动生成的
 
-[使用视频](http://v.qq.com/page/u/p/9/u01775jmmp9.html)
+
 
 > 运维人员都不喜欢搞CMDB，因为有很多前端的内容，但CMDB却在运维圈占有重要的地位，开发CMDB就是各种增删改查，之后我有个想法，做一个写配置文件就自动生成页面的CMDB, 请支持我的woniu-cmdb,喜欢请star
 
