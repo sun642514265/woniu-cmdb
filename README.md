@@ -4,6 +4,7 @@
 
 <iframe class="video_iframe" style="z-index: 1; width: 670px !important; height: 502.5px !important; overflow: hidden;" height="502.5" width="670" frameborder="0" data-src="https://v.qq.com/iframe/preview.html?vid=o0177n0nfav&amp;width=500&amp;height=375&amp;auto=0" allowfullscreen="" src="https://v.qq.com/iframe/player.html?vid=o0177n0nfav&amp;width=670&amp;height=502.5&amp;auto=0" scrolling="no"></iframe>
 
+
 [线上demo](http://admin.51reboot.com/),此页面都是一个配置文件自动生成的
 
 
@@ -120,6 +121,7 @@ todolist:
 
 本项目python依赖flask和mysqldb模块，直接pip安装一下即可
 
+后续详细的文章，会发布在我的[博客](https://github.com/shengxinjing/my_blog/issues)里
 
 <p>运维开发交流QQ群：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=f03fd72ed353ccfc801d393529aed84e2a663334caba7af88aa2a29620636549"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Reboot【二】" title="Reboot【二】"></a></p>
 欢迎大家关注公共号,高品质运维开发
