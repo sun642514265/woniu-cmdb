@@ -29,6 +29,20 @@ page_config = {
             }]
         },
         {
+            # user配置最好不要修改，是和登陆认证相关的，直接在下面加配置即可
+            "name": 'test',
+            "title": '测试',
+            "data": [{
+                "name": 'username',
+                "title": '用户名'
+            },{
+                "name":'password',
+                "title":'密码',
+                "empty":"yes"
+
+            }]
+        },
+        {
             "name":'caninet',
             "title":'机柜',
             "data":[{
