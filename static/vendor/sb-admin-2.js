@@ -228,13 +228,15 @@ $.extend(RebootPage.prototype, {
         var formArr = ['<form class="form-horizontal  ' + this.name + 'Form ">']
         $.each(this.data, function(indev, val) {
             // 表单验证配置
-            that.validators[val.name] = {
-                validators: {
-                    notEmpty: {
-                        message: val.msg || '请输入' + val.title
+            if (!val.empty) {   
+                that.validators[val.name] = {
+                    validators: {
+                        notEmpty: {
+                            message: val.msg || '请输入' + val.title
+                        }
                     }
                 }
-            }
+            };
 
             val.placeholder = val.placeholder || '请输入' + val.title
             val.type = val.type || 'text'
@@ -328,9 +330,13 @@ $.extend(RebootPage.prototype, {
     },
     // 添加一个addBTN在表格上面，和添加的表单对应，点击能打开
     initAddBtn: function() {
-        $('#main-content').prepend('<p class="add-btn"><button type="button" class="btn btn-primary btn-sm"' +
-            'data-toggle="modal" data-target="#add' + this.name + 'modal">' +
+        $('#main-content').prepend('<p class="add-btn"><button type="button" class="btn btn-primary btn-sm add-modal"' +
+            ' data-target="#add' + this.name + 'modal">' +
             '添加' + this.title + '</button></p>')
+        $('#main-content').on('click.add','.add-modal',function(){
+            var modalName = $(this).data('target')
+            $(modalName).modal('show')
+        })
     },
     // 添加表单验证
     addFormValidate: function() {
@@ -541,7 +547,6 @@ $.rebootOps = function(opt) {
 
 
 $(function() {
-
     $('#side-menu').metisMenu();
 
 
