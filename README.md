@@ -39,7 +39,7 @@
 ```
 python woniu-build.py init # 初始化数据库+根据配置生成文件
 
-python woniu-build.py 仅根绝配置生成文件 
+python woniu-build.py 仅根据配置生成文件
 ```
 ### 使用指南
 
