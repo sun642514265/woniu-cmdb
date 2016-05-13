@@ -5,9 +5,9 @@
 ### :snail: 奇技淫巧--写配置文件生成增删改查系统:mushroom: 
 ### [视频教程](http://v.qq.com/page/u/p/9/u01775jmmp9.html)
 
+### 2.0需要大改版，权限系统和菜单要重做，一直没时间搞，囧
 
 ### 进度表 <a name="progress">&nbsp;</a>
-
 
 
 
@@ -15,10 +15,6 @@
 ---|:---:|---|:---:|:---:
 干掉配置，前端控制 | 蜗牛 | ![progress](http://progressed.io/bar/10) | **1** | 使用
 
-
-
-
-[线上demo](http://admin.51reboot.com/),此页面都是一个配置文件自动生成的
 
 详细的文章介绍和实现原理分析会发布在我的[博客](https://github.com/shengxinjing/my_blog/issues)，敬请期待
 
@@ -133,13 +129,13 @@ todolist:
 
 ### 依赖
 
-本项目python依赖flask和mysqldb模块，直接pip安装一下即可
+<!-- 本项目python依赖flask和mysqldb模块，直接pip安装一下即可
 
 <p>运维开发交流QQ群：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=f03fd72ed353ccfc801d393529aed84e2a663334caba7af88aa2a29620636549"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="Reboot【二】" title="Reboot【二】"></a></p>
 欢迎大家关注公共号,高品质运维开发
 
 ![](http://7xjoq9.com1.z0.glb.clouddn.com/erweima.jpg)
-
+ -->
 
 如果您觉得有我写的东西对你帮助，可以打赏点钱给我支付宝支付宝316783812@qq.com或者扫二维码
 
