@@ -3,6 +3,7 @@
 
 # 数据库配置
 
+
 db_config = {
 	'host':'localhost',
 	'user':'root',
