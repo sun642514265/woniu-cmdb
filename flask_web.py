@@ -1,7 +1,7 @@
 from flask import Flask,request,render_template,redirect,url_for,session
 from config import db_config,page_config
 from dbutil.dbutil import DB
-import requests
+# import requests
 import json
 import sys
 reload(sys)
