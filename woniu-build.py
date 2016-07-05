@@ -46,7 +46,7 @@ def create_table(name,data):
     tmp = []
     for v in data:
         tmp.append('%s varchar(200)'%v['name'])
-    sql = 'create table %s (id int not null auto_increment primary key,%s)' % (name,','.join(tmp))
+    sql = 'create table %s (id int not null auto_increment primary key,%s) type=myisam default charset utf8' % (name,','.join(tmp))
     print sql
     db.execute(sql)
     print 'table %s is created' % (name)
