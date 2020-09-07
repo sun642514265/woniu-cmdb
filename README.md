@@ -134,7 +134,10 @@ todolist:
 
 ### 依赖
 
-本项目python依赖flask和mysqldb模块，直接pip安装一下即可
+本项目python依赖flask和mysqldb模块，直接pip安装一下即可。
+
+yum install python-flask
+yum install MySQL-python -y
 
 
 
