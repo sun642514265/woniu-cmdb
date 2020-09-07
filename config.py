@@ -195,7 +195,7 @@ page_config = {
             },
 
             {
-                "name":"disk_mode",
+                "name":"disk_model",
                 "title":'型号'
             },
 
