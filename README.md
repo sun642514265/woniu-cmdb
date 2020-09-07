@@ -117,6 +117,7 @@ page_config = {
             select_type：获取数据的action_type的值,和对应的name字段一致
             toname:preload数据里，完成id到name得转换显示，select默认true
              hide:默认false，true的话隐藏此字段
+             empty:"yes" 允许字段为空。
              
             option_val list的显示字段 默认id
             option_name list的显示字段 默认name
