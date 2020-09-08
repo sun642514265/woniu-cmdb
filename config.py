@@ -5,10 +5,10 @@
 
 
 db_config = {
-	'host':'127.0.0.1',
-	'user':'test_user',
-	'passwd':"test_user",
-	'db':'test'
+	'host':'192.168.2.85',
+	'user':'woniu_cmdb',
+	'passwd':"xxxxx",
+	'db':'woniu_cmdb'
 }
 
 
@@ -21,13 +21,14 @@ page_config = {
             # user配置最好不要修改，是和登陆认证相关的，直接在下面加配置即可
             "name": 'user',
             "title": '用户管理',
-            "modal_detail": '1',
+            "modal_detail": '',
             "data": [{
                 "name": 'username',
                 "title": '用户名'
             },{
                 "name":'password',
-                "title":'密码'
+                "title":'密码',
+                "hide":'true'
             },{
                 "name":'chinese_name',
                 "title":'中文名'
@@ -62,10 +63,16 @@ page_config = {
             },
 
             {
+                "name":"cloud_account",
+                "title":'云账户',
+		"empty":"yes"
+            },
+
+            {
                 "name":"region",
                 "title":'区域',
                 "type":'select',
-                "value":{1:'自建机房',2:'自建屏蔽机房',3:'阿里云华北1(青岛)',4:'阿里云华北2(北京)',5:'阿里云华东1(杭州)'}
+                "value":{1:'自建机房(屏蔽)',2:'自建机房(非屏蔽)',3:'华北1(青岛)',4:'华北2(北京)',5:'华东1(杭州)'}
             },
 
             {
@@ -109,13 +116,6 @@ page_config = {
             },
 
             {
-                "name":'data_disk_type',
-                "title":"数据盘类型",
-                "type":'select',
-                "value":{1:'SSD',2:'HHD'}
-            },
-
-            {
                 "name":'start_time',
                 "title":"购买日期",
                 "type":'date'
@@ -130,17 +130,20 @@ page_config = {
 
             {
                 "name":'maintenance_company',
-                "title":"维保公司"
+                "title":"维保公司",
+		"empty":"yes"
             },			
 
             {
                 "name":'maintenance_principal',
-                "title":"维保人员"
+                "title":"维保人员",
+		"empty":"yes"
             },				
 
             {
                 "name":'maintenance_telephone',
-                "title":"维保电话"
+                "title":"维保电话",
+		"empty":"yes"
             },					
 
             {
@@ -166,7 +169,7 @@ page_config = {
                 "name":"region",
                 "title":'区域',
                 "type":'select',
-                "value":{1:'自建机房',2:'自建屏蔽机房',3:'阿里云华北1(青岛)',4:'阿里云华北2(北京)',5:'阿里云华东1(杭州)'}
+                "value":{1:'自建机房(屏蔽)',2:'自建机房(非屏蔽)'}
             },
 
             {
@@ -242,17 +245,20 @@ page_config = {
 
             {
                 "name":'disk_maintenance_company',
-                "title":"维保公司"
+                "title":"维保公司",
+		"empty":"yes"
             },
 
             {
                 "name":'disk_maintenance_principal',
-                "title":"维保人员"
+                "title":"维保人员",
+		"empty":"yes"
             },
 
             {
                 "name":'disk_maintenance_telephone',
-                "title":"维保电话"
+                "title":"维保电话",
+		"empty":"yes"
             },
 
             {
@@ -275,6 +281,12 @@ page_config = {
                 "select_type":'idc'
             },
 
+            {
+                "name":"cloud_account",
+                "title":'云账户',
+                "empty":"yes"
+            },
+
             {   
                 "name":"service_name",
                 "title":'服务名称'
@@ -293,7 +305,7 @@ page_config = {
             },
 
             {
-                "name":"vip",
+                "name":"db_vip",
                 "title":'虚拟IP',
 		"empty":"yes"
             },
@@ -363,6 +375,12 @@ page_config = {
             },
 
             {
+                "name":"cloud_account",
+                "title":'云账户',
+                "empty":"yes"
+            },
+
+            {
                 "name":"service_name",
                 "title":'服务名称'
             },
@@ -381,7 +399,7 @@ page_config = {
             },
 
             {   
-                "name":"vip",
+                "name":"dbproxy_vip",
                 "title":'虚拟IP',
                 "empty":"yes"
             },
@@ -422,13 +440,13 @@ page_config = {
             },
 			
             {
-                "name":"username",
+                "name":"proxy_username",
                 "title":'proxy用户名',
 		"empty":"yes"
             },
 
             {
-                "name":"password",
+                "name":"proxy_password",
                 "title":'proxy密码',
 		"empty":"yes"
             },
@@ -451,8 +469,81 @@ page_config = {
                 "type":'select',
                 "value":{1:'在线',2:'下线'}
             }]
-        }
+        },
 
+        {
+            "name":"dbport_mapping",
+            "title":"端口映射",
+            "modal_detail": '1',
+            "data":[
+
+            {
+                "name":"service_name",
+                "title":'服务名称'
+            },
+
+            {
+                "name":'service_type',
+                "title":'服务类型',
+                "type":'select',
+                "value":{1:'生产',2:'预演',3:'测试'}
+            },
+
+            {
+                "name":'db_type',
+                "title":'数据库类型',
+                "type":'select',
+                "value":{1:'MySQL',2:'MariaDB',3:'Oracle',4:'Redis',5:'MongoDB'}
+            },
+
+            {
+                "name":"source_idc",
+                "title":'源地',
+                "type":'select',
+                "select_type":'idc'
+            },
+
+
+            {
+                "name":"source_ip",
+                "title":'源IP'
+            },
+
+            {
+                "name":"source_port",
+                "title":'源Port'
+            },
+
+            {
+                "name":"target_idc",
+                "title":'目标地',
+                "type":'select',
+                "select_type":'idc'
+            },
+
+            {
+                "name":"target_ip",
+                "title":'目标IP'
+            },
+
+            {
+                "name":"target_port",
+                "title":'目标Port'
+            },
+
+            {
+                "name":'start_time',
+                "title":"上线日期",
+                "type":'date'
+            },
+
+            {
+                "name":'status',
+                "title":'状态',
+                "type":'select',
+                "value":{1:'在线',2:'下线'}
+            }]
+        }
 
     ]
 }
